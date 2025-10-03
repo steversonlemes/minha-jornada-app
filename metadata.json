@@ -1,0 +1,5 @@
+{
+  "name": "Jornada do Líder",
+  "description": "An interactive leadership development course with user profiles, progress tracking, and a built-in diary. Built with React, TypeScript, and Tailwind CSS, it offers a multilingual, responsive experience.",
+  "requestFramePermissions": []
+}
