@@ -66,7 +66,8 @@ const Lesson: React.FC<LessonProps> = ({ lesson, diary, progress, onUpdateDiary,
             <h2 className="text-2xl font-bold mb-4">{t('lesson.podcast')}</h2>
             <audio controls className="w-full">
               <source src={lesson.podcastUrl} type="audio/mpeg" />
-              Your browser does not support the audio element.
+              {/* FIX: Explicitly wrap string children in a JSX expression to prevent potential parser errors. */}
+              {'Your browser does not support the audio element.'}
             </audio>
           </div>
         )}

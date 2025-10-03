@@ -6,7 +6,8 @@ import { getFirestore } from 'firebase/firestore';
 // AÇÃO NECESSÁRIA: Substitua o objeto de exemplo abaixo pelas chaves do SEU projeto.
 // Você encontra esses valores nas configurações do seu projeto no console do Firebase.
 // =====================================================================================
-const firebaseConfig = {
+// FIX: Export firebaseConfig to make it available for import in other modules.
+export const firebaseConfig = {
   apiKey: "AIzaSyC26_6RAzyVrHaCLmq4FFPgyGgGO5pqAEQ",
   authDomain: "jornada-do-lider-app.firebaseapp.com",
   projectId: "jornada-do-lider-app",
