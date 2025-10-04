@@ -86,5 +86,47 @@ export const COURSE_MODULES: Module[] = [
         }
       }
     ]
+  },
+  {
+    id: 'm3',
+    title: {
+      pt: 'Módulo 3: Inteligência Emocional',
+      en: 'Module 3: Emotional Intelligence',
+      es: 'Módulo 3: Inteligencia Emocional',
+    },
+    lessons: [
+      {
+        id: 'm3l1',
+        title: {
+          pt: 'Aula 1: O Poder da Empatia',
+          en: 'Lesson 1: The Power of Empathy',
+          es: 'Lección 1: El Poder de la Empatía',
+        },
+        summary: {
+          pt: `<h1>Compreendendo e Conectando-se com sua Equipe.</h1><p>Inteligência emocional é a pedra angular da liderança moderna. Começa com a empatia - a capacidade de compreender e partilhar os sentimentos dos outros. Líderes empáticos criam segurança psicológica, fomentam a confiança e constroem equipes mais resilientes e inovadoras.</p><ul><li>Reconhecer emoções em si e nos outros.</li><li>Praticar a escuta empática.</li><li>Responder com compaixão e apoio.</li></ul>`,
+          en: `<h1>Understanding and Connecting with Your Team.</h1><p>Emotional intelligence is the cornerstone of modern leadership. It begins with empathy—the ability to understand and share the feelings of another. Empathetic leaders create psychological safety, foster trust, and build more resilient and innovative teams.</p><ul><li>Recognizing emotions in oneself and others.</li><li>Practicing empathetic listening.</li><li>Responding with compassion and support.</li></ul>`,
+          es: `<h1>Comprender y Conectar con tu Equipo.</h1><p>La inteligencia emocional es la piedra angular del liderazgo moderno. Comienza con la empatía: la capacidad de comprender y compartir los sentimientos de los demás. Los líderes empáticos crean seguridad psicológica, fomentan la confianza y construyen equipos más resilientes e innovadores.</p><ul><li>Reconocer las emociones en uno mismo y en los demás.</li><li>Practicar la escucha empática.</li><li>Responder con compasión y apoyo.</li></ul>`,
+        },
+        podcastUrl: 'https://example.com/podcast3.mp3',
+        videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        studyGuide: {
+          shortAnswerQuestions: [
+            { id: 'm3l1_sa1', question: { pt: 'Por que a empatia é crucial para um líder?', en: 'Why is empathy crucial for a leader?', es: '¿Por qué es crucial la empatía para un líder?' }, answer: { pt: 'Porque permite ao líder conectar-se com sua equipe, entender suas necessidades e motivações, e criar um ambiente de confiança e segurança.', en: 'Because it allows the leader to connect with their team, understand their needs and motivations, and create an environment of trust and safety.', es: 'Porque permite al líder conectar con su equipo, entender sus necesidades y motivaciones, y crear un ambiente de confianza y seguridad.' } },
+          ],
+          dissertationQuestions: [
+            { id: 'm3l1_diss1', question: { pt: 'Pense em uma situação em que um pouco mais de empatia poderia ter mudado o resultado de uma interação profissional. Descreva o que você faria de diferente.', en: 'Think of a situation where a little more empathy could have changed the outcome of a professional interaction. Describe what you would do differently.', es: 'Piensa en una situación en la que un poco más de empatía podría haber cambiado el resultado de una interacción profesional. Describe qué harías de manera diferente.' } },
+          ],
+          glossary: [
+            { id: 'm3l1_gl1', term: { pt: 'Segurança Psicológica', en: 'Psychological Safety', es: 'Seguridad Psicológica' }, definition: { pt: 'A crença compartilhada pelos membros de uma equipe de que o ambiente é seguro para assumir riscos interpessoais.', en: 'A shared belief held by members of a team that the team is safe for interpersonal risk-taking.', es: 'Una creencia compartida por los miembros de un equipo de que el ambiente es seguro para tomar riesgos interpersonales.' } },
+             { id: 'm3l1_gl2', term: { pt: 'Autoconsciência', en: 'Self-awareness', es: 'Autoconciencia' }, definition: { pt: 'A capacidade de reconhecer e compreender suas próprias emoções, pontos fortes, fraquezas e motivadores.', en: 'The ability to recognize and understand your own moods, emotions, and drives, as well as their effect on others.', es: 'La capacidad de reconocer y comprender tus propios estados de ánimo, emociones e impulsos, así como su efecto en los demás.' } },
+          ],
+          quiz: [
+            { id: 'm3l1_q1', question: { pt: 'Qual é o primeiro passo da inteligência emocional?', en: 'What is the first step of emotional intelligence?', es: '¿Cuál es el primer paso de la inteligencia emocional?' }, options: { pt: ['Gerenciar os outros', 'Autoconsciência', 'Motivação'], en: ['Managing others', 'Self-awareness', 'Motivation'], es: ['Gestionar a los demás', 'Autoconciencia', 'Motivación'] }, correctAnswerIndex: 1 },
+            { id: 'm3l1_q2', question: { pt: 'Um líder empático provavelmente...', en: 'An empathetic leader is likely to...', es: 'Un líder empático probablemente...' }, options: { pt: ['...ignora os sentimentos da equipe.', '...considera a perspectiva da equipe nas decisões.', '...foca apenas em métricas.'], en: ['...ignore the team’s feelings.', '...consider the team’s perspective in decisions.', '...focus only on metrics.'], es: ['...ignora los sentimientos del equipo.', '...considera la perspectiva del equipo en las decisiones.', '...se centra solo en las métricas.'] }, correctAnswerIndex: 1 },
+             { id: 'm3l1_q3', question: { pt: 'Segurança psicológica em uma equipe resulta em:', en: 'Psychological safety in a team results in:', es: 'La seguridad psicológica en un equipo resulta en:' }, options: { pt: ['Menos erros reportados', 'Maior inovação e colaboração', 'Maior competição interna'], en: ['Fewer reported mistakes', 'Higher innovation and collaboration', 'Increased internal competition'], es: ['Menos errores reportados', 'Mayor innovación y colaboración', 'Mayor competencia interna'] }, correctAnswerIndex: 1 },
+          ]
+        }
+      }
+    ]
   }
 ];
