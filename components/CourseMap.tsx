@@ -13,7 +13,9 @@ const CourseMap: React.FC<CourseMapProps> = ({ progress, onSelectLesson }) => {
   const { t, lang } = useI18n();
   let nextLessonFound = false;
 
-  const getLessonStatus = (lessonId: string) => {
+  type LessonStatus = 'completed' | 'next' | 'available';
+
+  const getLessonStatus = (lessonId: string): LessonStatus => {
     if (progress[lessonId] === 'completed') {
       return 'completed';
     }
@@ -21,7 +23,7 @@ const CourseMap: React.FC<CourseMapProps> = ({ progress, onSelectLesson }) => {
       nextLessonFound = true;
       return 'next';
     }
-    return 'locked';
+    return 'available'; // No more 'locked' state.
   };
 
   return (
@@ -35,12 +37,12 @@ const CourseMap: React.FC<CourseMapProps> = ({ progress, onSelectLesson }) => {
             <h2 className="text-2xl font-semibold text-amber-500 mb-4 ml-[-2rem]">{module.title[lang]}</h2>
             {module.lessons.map((lesson) => {
               const status = getLessonStatus(lesson.id);
-              const isLocked = status === 'locked';
               
-              let statusClasses = 'bg-gray-800';
+              let statusClasses = '';
               let icon;
               let pulseClass = '';
               let statusText = '';
+              let titleClasses = 'text-gray-100';
 
               if (status === 'completed') {
                 statusClasses = 'bg-green-900/50 border-green-700';
@@ -51,9 +53,10 @@ const CourseMap: React.FC<CourseMapProps> = ({ progress, onSelectLesson }) => {
                 icon = <BookIcon className="w-8 h-8 text-amber-400" />;
                 pulseClass = 'animate-pulse-slow';
                 statusText = t('map.next_lesson');
-              } else { // locked
-                statusClasses = 'bg-gray-800/50 border-gray-700 text-gray-500';
-                icon = <BookIcon className="w-8 h-8 text-gray-600" />;
+              } else { // 'available'
+                statusClasses = 'bg-gray-800 border-gray-700 cursor-pointer hover:bg-gray-700/50';
+                icon = <BookIcon className="w-8 h-8 text-gray-400" />;
+                statusText = '';
               }
 
               return (
@@ -62,15 +65,14 @@ const CourseMap: React.FC<CourseMapProps> = ({ progress, onSelectLesson }) => {
                     <div className={`w-3 h-3 rounded-full ${status === 'completed' ? 'bg-green-500' : status === 'next' ? 'bg-amber-500' : 'bg-gray-600'}`}></div>
                   </div>
                   <button
-                    onClick={() => !isLocked && onSelectLesson(lesson)}
-                    disabled={isLocked}
-                    className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${statusClasses} ${pulseClass} disabled:cursor-not-allowed`}
+                    onClick={() => onSelectLesson(lesson)}
+                    className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${statusClasses} ${pulseClass}`}
                   >
                     <div className="flex items-center space-x-4">
                       <div>{icon}</div>
                       <div>
-                        <h3 className={`font-bold text-lg ${isLocked ? 'text-gray-500' : 'text-gray-100'}`}>{lesson.title[lang]}</h3>
-                        <p className={`text-sm ${isLocked ? 'text-gray-600' : status === 'completed' ? 'text-green-400' : 'text-amber-300'}`}>{statusText}</p>
+                        <h3 className={`font-bold text-lg ${titleClasses}`}>{lesson.title[lang]}</h3>
+                        <p className={`text-sm ${status === 'completed' ? 'text-green-400' : 'text-amber-300'}`}>{statusText}</p>
                       </div>
                     </div>
                   </button>
